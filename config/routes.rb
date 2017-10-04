@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   # Back admin routes start
   namespace :admin do
     resources :users
-
+    resources :customers
+    
     # Admin root
     root to: 'application#index'
   end
@@ -13,6 +14,14 @@ Rails.application.routes.draw do
              path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
   # Application root
-  root to: 'application#home'
+  devise_scope :user do
+    authenticated :user do
+     root 'admin/application#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
   # Front routes end
 end

@@ -25,7 +25,8 @@
     <ul class="sidebar-menu">
       <li class="header"><%= t('admin.sidebar.main_navigation') %></li>
       <li> <%= link_to '<i class="fa fa-dashboard"></i><span>Dashboard</span>'.html_safe, admin_root_path %> </li>
-
+      <li> <%= link_to '<i class="fa fa-dashboard"></i><span>顧客登録</span>'.html_safe, new_admin_customer_path %> </li>
+      
       <li class="header"><%= t('admin.sidebar.administration') %></li>
       <li class="treeview">
         <a href="#">
@@ -36,8 +37,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li> <%= link_to '<i class="fa fa-circle-o"></i> List Users'.html_safe, admin_users_path %> </li>
-          <li> <%= link_to '<i class="fa fa-circle-o"></i> Create User'.html_safe, new_admin_user_path %> </li>
+          <li> <%= link_to '<i class="fa fa-circle-o"></i>ユーザ一覧'.html_safe, admin_users_path %> </li>
         </ul>
       </li>
 

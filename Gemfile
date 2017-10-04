@@ -20,6 +20,7 @@ gem 'pundit'
 gem 'sendgrid'
 gem 'layer-handler'
 gem 'friendly_id'
+gem 'devise-i18n'
 
 # Only Development env gems
 group :development do
